@@ -18,7 +18,7 @@ public class Hello {
 
     @GetMapping("/hello")
     public String getHelloWorld(){
-        String r = "Hello World Get: " + helloService.quantidadeGets();
+        String r = "Hello World Get: " + helloService.quantidadeGets() + "\nHello World Post: " + helloService.quantidadePosts();
         return r;
     }
 
