@@ -1,5 +1,8 @@
 package com.example.demo.services;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +15,12 @@ public class CursoService {
     @Autowired
     private CursoRepository cursoRepository;
 
+    public List<Curso> listarCursos() {
+        return cursoRepository.findAll();
+    }
     public Curso getCurso(Integer idCurso) {
-        return cursoRepository.getReferenceById(idCurso);
+        Optional<Curso> curso = cursoRepository.findById(idCurso);
+        return curso.get();
     }
 
     public Curso salvar(Curso curso) {

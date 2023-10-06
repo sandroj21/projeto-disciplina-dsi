@@ -19,8 +19,4 @@ public class Curso {
     @Column
     private String nome;
 
-    @Override
-    public String toString() {
-        return "Curso [id=" + id + ", nome=" + nome +"]";
-    }
 }
