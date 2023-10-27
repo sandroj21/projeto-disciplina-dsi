@@ -22,10 +22,6 @@ public class CursoController {
     @Autowired
     private CursoService cursoService;
 
-    @GetMapping("/dados")
-    public List<Curso> listarCursos() {
-        return cursoService.listarCursos();
-    }
     @GetMapping("/{idCurso}")
     public Curso getCurso(@PathVariable Integer idCurso) {
         Curso curso = cursoService.getCurso(idCurso);

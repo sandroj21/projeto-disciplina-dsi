@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Curso;
+import com.example.demo.entities.Turma;
 import com.example.demo.repositories.CursoRepository;
+import com.example.demo.repositories.TurmaRepository;
 
 @Service
 public class CursoService {
@@ -15,9 +17,7 @@ public class CursoService {
     @Autowired
     private CursoRepository cursoRepository;
 
-    public List<Curso> listarCursos() {
-        return cursoRepository.findAll();
-    }
+    
     public Curso getCurso(Integer idCurso) {
         Optional<Curso> curso = cursoRepository.findById(idCurso);
         return curso.get();
@@ -34,4 +34,6 @@ public class CursoService {
     public void remover(Integer idCurso) {
         cursoRepository.deleteById(idCurso);
     }
+
+    
 }
